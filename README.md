@@ -12,3 +12,11 @@ Read `bootstrap-eks.sh`.
 > EKS Auto Mode creates a load balancer when you create an Ingress Kubernetes objects and configures it to route traffic to your cluster workload. ([src](https://docs.aws.amazon.com/eks/latest/userguide/auto-configure-alb.html)
 
 See: https://docs.aws.amazon.com/eks/latest/userguide/auto-configure-alb.html
+
+# How do I delete it all? (This is costing me money, help delete it now!)
+
+```
+# There's no confirmation when deleting, make sure you know you want to delete
+# your EKS cluster and you have the correct name!
+# eksctl delete cluster --name test-eks
+```
