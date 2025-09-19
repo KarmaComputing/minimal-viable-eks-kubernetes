@@ -7,6 +7,8 @@ Assumption: You already have a boostrapped eks cluster using automode (see `boot
 
 tldr: For L7 (layer 7) traffic (e.g.HTTP/HTTPS) within your EKS cluster, you need an Ingress
 
+Read `bootstrap-eks.sh`.
+
 > EKS Auto Mode creates a load balancer when you create an Ingress Kubernetes objects and configures it to route traffic to your cluster workload. ([src](https://docs.aws.amazon.com/eks/latest/userguide/auto-configure-alb.html)
 
 See: https://docs.aws.amazon.com/eks/latest/userguide/auto-configure-alb.html
