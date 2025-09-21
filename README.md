@@ -1,5 +1,10 @@
 # Minimal EKS (Kuberentes on AWS) using EKS Auto Mode?
 
+- with EFS (to support `ReadWriteMany`)
+- It takes about 25mins to run, from a completely empty new account with zero added resources
+  - Assumes you have ran [aws-nuke](https://aws-nuke.ekristen.dev/quick-start/) on the target account
+    and/or have a completly new account
+
 > By the end of reading this you should be able to load the web address (`http` not `https`)
 of your deployment (service) in a web browser and view the application running in the related
 pod(s) container(s). Note: It might take longer than you expect for the AWS DNS to assign IPs
