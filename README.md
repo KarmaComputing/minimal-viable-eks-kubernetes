@@ -69,6 +69,8 @@ Use aws nuke to remove the resources. See also `eksctl delete cluster --name tes
 
 ## Test / debug Dynamic Storage provisioning
 
+See also [https://github.com/kubernetes-sigs/aws-efs-csi-driver/tree/master/examples/kubernetes/dynamic_provisioning](https://github.com/kubernetes-sigs/aws-efs-csi-driver/tree/master/examples/kubernetes/dynamic_provisioning)
+
 ```
 kubectl apply -f pod-dynamic-provisioning.yaml
 # wait
