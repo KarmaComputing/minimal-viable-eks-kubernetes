@@ -65,3 +65,31 @@ Use aws nuke to remove the resources. See also `eksctl delete cluster --name tes
 # your EKS cluster and you have the correct name!
 # eksctl delete cluster --name test-eks
 ```
+
+
+## Test / debug Dynamic Storage provisioning
+
+```
+kubectl apply -f pod-dynamic-provisioning.yaml
+# wait
+kubectl exec efs-app-dynamic-provisioning -- bash -c "cat data/out"
+# Exec into pod and verify data/user id permissions:
+kubectl exec -it efs-app-dynamic-provisioning -- bash
+```
+
+Example storage troubleshoot session:
+
+```
+[root@efs-app-dynamic-provisioning /]# id
+uid=0(root) gid=0(root) groups=0(root)
+[root@efs-app-dynamic-provisioning /]# pwd
+/
+[root@efs-app-dynamic-provisioning /]# touch test
+[root@efs-app-dynamic-provisioning /]# ls -l test
+-rw-r--r--. 1 root root 0 Sep 23 21:14 test
+[root@efs-app-dynamic-provisioning /]# pwd
+/
+[root@efs-app-dynamic-provisioning /]# touch /data/test
+[root@efs-app-dynamic-provisioning /]# ls -l /data/test
+-rw-r--r--. 1 50003 50003 0 Sep 23 21:14 /data/test
+```
